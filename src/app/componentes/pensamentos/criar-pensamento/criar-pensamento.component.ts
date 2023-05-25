@@ -29,25 +29,6 @@ export class CriarPensamentoComponent implements OnInit {
 
   }
 
-  retiraShadow(){
-    //let elemento = elemento as HTMLElement
-    //elemento.classList.remove('not-content')
-  }
-
-  veriPreenchimento(): Boolean{
-    let verificador: Boolean = true
-    const elements = document.querySelectorAll('.input');
-    elements.forEach(element => {
-      const inputElement = element as HTMLInputElement;
-
-
-      if(!inputElement.value){
-        inputElement.classList.add('not-content')
-        verificador = false
-      }
-    });
-    return verificador
-  }
 
   exibirAlerta() {
     this.exibeMsg = true;
@@ -58,20 +39,13 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   criarPensamento(){
-
-    if(this.veriPreenchimento()){
-      this.service.criar(this.pensamento).subscribe(()=>{
-        this.router.navigate(['/listarPensamento'])
-      })
-    }else{
-      this.exibirAlerta()
-    }
-
-
+    this.service.criar(this.pensamento).subscribe(()=>{
+      this.router.navigate(['/listarPensamento'])
+    })
   }
 
 
   cancelar(){
-    alert("cancelado")
+    this.router.navigate(['/listarPensamento'])
   }
 }

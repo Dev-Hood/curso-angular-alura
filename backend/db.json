@@ -7,34 +7,22 @@
       "modelo": "modelo1"
     },
     {
-      "id": 2,
-      "conteudo": "que bom por não vir kskskksk",
-      "autoria": "Gilberto",
-      "modelo": "modelo2"
-    },
-    {
       "id": 3,
       "conteudo": "angular e spring preciso aprnder",
       "autoria": "Galego",
-      "modelo": "modelo3"
+      "modelo": "modelo1"
     },
     {
       "id": 4,
       "conteudo": "E lá vamos nós",
       "autoria": "pica-pau",
-      "modelo": "modelo1"
+      "modelo": "modelo3"
     },
     {
       "conteudo": "teste",
       "autoria": "teste",
       "modelo": "modelo1",
       "id": 5
-    },
-    {
-      "conteudo": "hoje vou almoçar",
-      "autoria": "tallys",
-      "modelo": "modelo2",
-      "id": 6
     }
   ]
 }

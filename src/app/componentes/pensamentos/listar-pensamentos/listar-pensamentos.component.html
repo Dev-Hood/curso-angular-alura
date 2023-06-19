@@ -1,18 +1,30 @@
 <section class="container">
 
     <header class="header d-flex">
+        <div class="buscar-pensamentos">
+          <input
+            type="search"
+            class="filtro"
+            placeholder="o que vc busca? "
+            autofocus
+            [(ngModel)]="filtro"
+            (keyup)="pesquisarPensamento()"
+            >
+        </div>
         <h2 class="ff-inter">Meu Mural</h2>
         <button routerLink="/criarPensamento" class="botao">Adicionar Pensamento</button>
     </header>
     <div class="mural" *ngIf="listaPensamentos.length > 0, else semPensamentos">
-
         <div *ngFor="let pensamento of listaPensamentos">
             <app-pensamento [pensamento]="pensamento"></app-pensamento>
         </div>
-
     </div>
 </section>
+<app-botao-buscar-mais
+  [haMaisPensamentos]="haMaisPensamentos"
+  (click)="carregarMaisPensamentos()">
 
+</app-botao-buscar-mais>
 <ng-template #semPensamentos>
     <div class="ff-inter sem-pensamentos">
         <p>Ainda não há pensamentos cadastrados!</p>

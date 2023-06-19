@@ -11,9 +11,11 @@
     align-content: center;
   }
 
-  .not-content{
-    box-shadow: 0 0 10px red ;
+  form{
+    position: relative;
   }
+
+  
   .botao {
     margin: 5px;
     margin-top: 70px;
@@ -49,7 +51,9 @@
     border-radius: 20px;
     margin: 0.5rem 0 2rem;
   }
+  .input{
 
+  }
 
   .criar-pensamentos form .textarea {
     border: none;
@@ -141,4 +145,25 @@
 
   input[type='radio']:checked+.custom-radio span {
     background: #154580;
+  }
+
+  .small{
+    position: absolute;
+    right: 9%;
+    top: 14%;
+    font-size: 30px;
+  }
+
+  .mensagem__erro {
+    font-size: 12px;
+    margin-left: 5px;
+    color: red;
+    margin-top: -25px;
+    margin-bottom: 20px;
+  }
+
+  .botao__desabilitado {
+    margin: 5px;
+    margin-top: 70px;
+    width: 200px;
   }

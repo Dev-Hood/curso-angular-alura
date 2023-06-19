@@ -1,4 +1,5 @@
 .acoes {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
@@ -128,4 +129,28 @@ input[type='radio']:checked+.custom-radio {
 
 input[type='radio']:checked+.custom-radio span {
   background: #154580;
+}
+form{
+  position: relative;
+}
+.input{
+  word-wrap: break-word;
+}
+
+.mensagem__erro{
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+.small{
+  position: absolute;
+  right: 9%;
+  top: 13%;
+  font-size: 30px;
+}
+.botao__desabilitado {
+  margin: 5px;
+  width: 200px;
 }

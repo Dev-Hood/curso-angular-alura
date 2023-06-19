@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Pensamento } from './pensamento';
 import { Observable } from 'rxjs';
 
@@ -12,8 +12,19 @@ export class PensamentoService {
 
   }
 
-  listar(): Observable<Pensamento[]>{
-    return this.httpClient.get<Pensamento[]>(this.API)
+  listar(pagina: number, filtro: string): Observable<Pensamento[]>{
+    const itensPorPagina = 4;
+
+    let params = new HttpParams()
+      .set("_page",pagina)
+      .set("_limit",itensPorPagina)
+
+      if(filtro.trim().length > 2){
+        params = params.set("q",filtro)
+      }
+
+    //return this.httpClient.get<Pensamento[]>(`${this.API}?_page=${pagina}&_limit=${itensPorPagina}`)
+    return this.httpClient.get<Pensamento[]>(this.API,{params})
   }
   criar(pensamento: Pensamento): Observable<Pensamento>{
     return this.httpClient.post<Pensamento>(this.API,pensamento)
